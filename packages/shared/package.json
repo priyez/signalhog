@@ -10,7 +10,7 @@
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "lint": "eslint src/**/*.ts"
   },
-  "devDependencies": {
+  "dependencies": {
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   }
