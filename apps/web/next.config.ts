@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  transpilePackages: ["@feature-flags/shared"],
+  experimental: {
+    turbo: {
+      root: "../..",
+    },
+  },
 };
 
 export default nextConfig;

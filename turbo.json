@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["DATABASE_URL", "JWT_SECRET", "NEXT_PUBLIC_API_URL"],
+  "globalEnv": ["DATABASE_URL", "JWT_SECRET", "NEXT_PUBLIC_API_URL", "NEXTAUTH_SECRET", "AUTH_GITHUB_ID", "AUTH_GITHUB_SECRET"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
