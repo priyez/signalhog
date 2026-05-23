@@ -26,7 +26,7 @@ export default async function sdkRoutes(fastify: FastifyInstance) {
       prisma.apiKey.update({
         where: { id: keyData.id },
         data: { lastUsedAt: new Date() },
-      }).catch(err => fastify.log.error(err));
+      }).catch((err: any) => fastify.log.error(err));
 
       const flags = keyData.environment.flags.reduce(
         (acc: Record<string, { enabled: boolean; rolloutPercentage: number }>, flag: any) => {

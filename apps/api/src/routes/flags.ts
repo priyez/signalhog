@@ -27,13 +27,13 @@ export default async function flagsRoutes(fastify: FastifyInstance) {
         });
         
         const createdFlags = await Promise.all(
-          environments.map(env => 
+          environments.map((env: any) => 
             prisma.flag.create({
               data: {
                 ...data,
                 environmentId: env.id,
               }
-            }).catch(err => {
+            }).catch((err: any) => {
               // Ignore if key already exists in some envs
               console.error(`Flag ${data.key} already exists in ${env.name}`);
               return null;
@@ -41,7 +41,7 @@ export default async function flagsRoutes(fastify: FastifyInstance) {
           )
         );
         
-        return createdFlags.filter(f => f !== null)[0] || { success: true };
+        return createdFlags.filter((f: any) => f !== null)[0] || { success: true };
       }
 
       const validatedData = CreateFlagSchema.parse(data);
